@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A professional AI chatbot powered by FastAPI, SQLite and Llama 3.2."
+    >
+
+    <title>AI Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+
+        <aside
+            id="sidebar"
+            class="sidebar"
+        >
+
+            <div class="sidebar-top">
+
+                <div class="sidebar-brand">
+
+                    <div class="brand-logo">
+                        ✦
+                    </div>
+
+                    <div>
+                        <h2>AI Assistant</h2>
+                        <span>Local AI</span>
+                    </div>
+
+                </div>
+
+                <button
+                    id="close-sidebar"
+                    class="icon-button mobile-only"
+                    title="Close sidebar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <button
+                id="new-chat-button"
+                class="new-chat-button"
+            >
+                <span>＋</span>
+                New chat
+            </button>
+
+
+            <div class="sidebar-section">
+
+                <p class="sidebar-label">
+                    ABOUT
+                </p>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🤖
+                    </div>
+
+                    <div>
+                        <strong>Llama 3.2</strong>
+
+                        <p>
+                            Running locally through Ollama
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-spacer"></div>
+
+
+            <div class="sidebar-footer">
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        AI system online
+                    </span>
+
+                </div>
+
+                <p>
+                    FastAPI • SQLite • Ollama
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main application -->
+
+        <main class="main">
+
+            <!-- Header -->
+
+            <header class="topbar">
+
+                <button
+                    id="menu-button"
+                    class="icon-button mobile-only"
+                    title="Open sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div class="mobile-title">
+
+                    <div class="mobile-logo">
+                        ✦
+                    </div>
+
+                    <strong>
+                        AI Assistant
+                    </strong>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button
+                        id="theme-button"
+                        class="icon-button"
+                        title="Toggle theme"
+                    >
+                        ☾
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- Chat -->
+
+            <section
+                id="chat-box"
+                class="chat-box"
+            >
+
+                <div
+                    id="welcome-screen"
+                    class="welcome-screen"
+                >
+
+                    <div class="welcome-icon">
+                        ✦
+                    </div>
+
+                    <h1>
+                        How can I help you?
+                    </h1>
+
+                    <p>
+                        Ask me anything. Your conversation
+                        is stored locally on your computer.
+                    </p>
+
+
+                    <div class="suggestions">
+
+                        <button
+                            class="suggestion"
+                            data-message="Explain artificial intelligence in simple words."
+                        >
+                            <span>💡</span>
+                            Explain AI simply
+                        </button>
+
+                        <button
+                            class="suggestion"
+                            data-message="Help me write a professional resume."
+                        >
+                            <span>📝</span>
+                            Write a resume
+                        </button>
+
+                        <button
+                            class="suggestion"
+                            data-message="Teach me Python programming from the basics."
+                        >
+                            <span>🐍</span>
+                            Learn Python
+                        </button>
+
+                        <button
+                            class="suggestion"
+                            data-message="Give me five ideas for a software engineering project."
+                        >
+                            <span>🚀</span>
+                            Project ideas
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Composer -->
+
+            <div class="composer-wrapper">
+
+                <div class="composer">
+
+                    <textarea
+                        id="message-input"
+                        rows="1"
+                        placeholder="Message AI Assistant..."
+                        autocomplete="off"
+                    ></textarea>
+
+
+                    <button
+                        id="send-button"
+                        class="send-button"
+                        title="Send message"
+                    >
+                        <span>↑</span>
+                    </button>
+
+                </div>
+
+
+                <p class="composer-note">
+                    AI can make mistakes. Check important information.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <div
+        id="sidebar-overlay"
+        class="sidebar-overlay"
+    ></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
