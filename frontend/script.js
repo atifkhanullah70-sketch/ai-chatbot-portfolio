@@ -18,7 +18,7 @@ const sidebarOverlay =
 const suggestions =
     document.querySelectorAll(".suggestion");
 
-const API_URL = "joyful-enchantment-production-4656.up.railway.app"; // This is fine for now, we will change it later.
+const API_URL = "https://joyful-enchantment-production-4656.up.railway.app"; // This is fine for now, we will change it later.
 
 let sessionId =
     localStorage.getItem("chat_session_id");
