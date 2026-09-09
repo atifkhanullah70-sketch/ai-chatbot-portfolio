@@ -1,13 +1,14 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-DATABASE_URL = "sqlite:///./chatbot.db"
+# Use a writable directory for Railway
+database_path = os.path.join('/tmp', 'chatbot.db')
+DATABASE_URL = f"sqlite:///{database_path}"
 
 engine = create_engine(
     DATABASE_URL,
-    connect_args={
-        "check_same_thread": False
-    }
+    connect_args={"check_same_thread": False}
 )
 
 SessionLocal = sessionmaker(
@@ -18,10 +19,8 @@ SessionLocal = sessionmaker(
 
 Base = declarative_base()
 
-
 def get_db():
     db = SessionLocal()
-
     try:
         yield db
     finally:
